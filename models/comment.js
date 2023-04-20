@@ -15,7 +15,7 @@ Comment.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    user: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -28,7 +28,7 @@ Comment.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    post: {
+    post_id: {
       type: DataTypes.UUID,
       allowNull: false,
       references: {
