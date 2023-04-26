@@ -6,10 +6,10 @@ class Post extends Model {}
 Post.init(
   {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
+      autoIncrement: true,
     },
     title: {
       type: DataTypes.STRING,
