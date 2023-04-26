@@ -2,16 +2,16 @@
     {
       "title": "Getting through CSS",
       "content": "Starting CSS can be overwhelming BUT I promise, once you start, things get easier!", 
-      "date": "2/22/22"  
+      "user_id": 3
     },
     {
         "title": "OOP",
         "content": "OOP might be one of the hardest concepts to grasp in computer science. Making sure that tests pass can cause hair pulling and tummy aches, but once you figure out the bases, it'll slowly but surely click!", 
-        "date": "2/18/23"  
+        "user_id": 2
       },
       {
         "title": "HTML Wizard",
         "content": "When I first started learning HTML, I was completely lsot. But I stumbled upond so helpful resources on youtube and stackoverflow and I think if you utilize those sources, it will really help clear things up!", 
-        "date": "1/11/11"  
+        "user_id":1
       }
 ]

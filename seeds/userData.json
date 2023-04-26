@@ -1,14 +1,18 @@
 [
     {
-        "username": "samanthaahn"
+        "username": "samanthaahn",
+        "password":"12345678"
     },
     {
-        "username": "tristanwatson"
+        "username": "tristanwatson",
+        "password":"12345678"
     },    
     {
-        "username": "taylorspencor"
+        "username": "taylorspencor",
+        "password":"12345678"
     },
     {
-        "username": "kristinaahn"
+        "username": "kristinaahn",
+        "password":"12345678"
     }
 ]
