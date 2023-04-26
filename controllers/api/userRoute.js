@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 //register route
-router.post('/', async (req, res) => {
+router.post('/register', async (req, res) => {
 try {
     const userData = await User.create({
         username: req.body.username,
@@ -19,8 +19,26 @@ try {
 });
 
 //login route
-router.post('/', async (req, res) => {
-
+router.post('/login', async (req, res) => {
+try {
+    const userData = await User.findOne({where: {username: req.body.username}});
+    if (!userData) {
+        res.status(400).json('No user found with that username!')
+        return;
+    }
+    const validPassward = await userData.checkPassword(req.body.password);
+    if(!validPassward) {
+        res.status(400).json('Please try again!');
+        return;
+    }
+    req.session.save(() =>{
+        req.session.userId = userData.id;
+        req.session.loggedIn = true;
+        res.status(200).json('You are successfully logged in!');
+    })
+} catch (error) {
+    res.status(400).json('Unable to login! Please try again.');
+}
 });
 
 //logout
