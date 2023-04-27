@@ -30,5 +30,20 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+// Add a post 
+router.post('/', async (req, res) => {
+    try {
+        const newPost = await Post.create({
+            ...req.body,
+          title: req.body.title,
+          content: req.body.content,
+          user_id: req.body.user_id,  
+        });
+        res.status(201).json(newPost)
+    } catch (error) {
+        console.error("Error in POST /:", err);
+        res.status(400).json({ message: "Bad Request", error: err }); 
+    }
+})
 
 module.exports = router;
