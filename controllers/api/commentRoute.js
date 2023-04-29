@@ -32,6 +32,20 @@ router.put('/:id', async (req, res) => {
         console.error('Error with this comment:', error);
         res.status(500).json({ message: 'Internal Server Error', error: error });
     }
-})
+});
+
+// This is a delete route to edit a comment 
+router.delete('/:id', async (req, res) => {
+    try {
+        const commentData = await Comment.destroy ({
+            where: {
+                id: req.params.id
+            },
+        })
+        res.status(200).json(commentData)
+    } catch (error) {
+        res.status(400).json(error);
+    }
+});
 
 module.exports = router;
