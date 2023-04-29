@@ -66,4 +66,18 @@ router.post('/edit/:id', async (req, res, next) => {
   }
 });
 
+// This route is used to delete a post
+router.delete('/:id', async (req, res) => {
+  try {
+    const postData = await Post.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).json(postData);
+  } catch (error) {
+    res.status(404).json(error);
+  }
+});
+
 module.exports = router;
