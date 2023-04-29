@@ -2,7 +2,7 @@
 
 
 ## Description
-
+This is your go-to tech blog. Read blog posts from other users, comment on their posts, and even create your own posts! If you don't have an account, create one and you'll be able to interact with the blog!
 
 
 ## Table of Contents
@@ -12,14 +12,11 @@
 - [Tests](#tests)
 - [Questions](#questions)
 
-## Walkthrough Video 
-https://drive.google.com/file/d/1hs8iC9R092XnD2G_LgHu-8dFo0GkzQyM/view to an external site.
-
 ## Installation
-In order to use this repo, you have to install sequelize version 5.21.7 as well as node.js, mysql2 version 2.2.5, and dotenv version 8.2.0. 
+N/A
 
 ## Usage
-In order to use this application, you first need to seed all your data (type node run seed) and run "npm i" to install all required dependencies. Once everything is installed, you can run "node server.js" to start. Through a backend service, you can enter in your localhost:3001 and go get, put, delete, and posts requests. Depending on the type of request, you can view all models, as well as update and delete them. 
+In order to use to be able to comment/edit/delete you'll need to create an account first. Once you're logged in, you can look at a users post, create your own, comment on posts, delete your comment. You can check your dashboard to see all the posts you've created. Interact and have fun! 
 
 ## Screenshot
 ![alt text](./assets/images/Screenshot%202023-04-20%20at%203.35.07%20PM.png)
@@ -29,8 +26,6 @@ In order to use this application, you first need to seed all your data (type nod
 ![alt text](./assets/images/Screenshot%202023-04-20%20at%203.35.30%20PM.png)
 
 ![alt text](./assets/images/Screenshot%202023-04-20%20at%203.35.37%20PM.png)
-
-
 
 
 ## Contributing
