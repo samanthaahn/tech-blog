@@ -1,1 +1,15 @@
-<div>Edit</div>
+<div>
+  <h2>Edit Post</h2>
+  <form method="POST" action="/api/posts/edit/{{post.id}}">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" value="{{post.title}}">
+    <label for="content">Content</label>
+    <textarea name="content" id="content">{{post.content}}</textarea>
+    <input type="hidden" name="post_id" value="{{post.id}}">
+    <input type="submit" value="Submit">
+    <div class="deletepost">
+      <button id="deleteBtn" type="submit">Delete Post!</button>
+    </div>
+  </form>
+</div>
+<script src="/public/js/deletepost.js"></script>
