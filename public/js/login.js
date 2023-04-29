@@ -1,10 +1,9 @@
 document.getElementById('register-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const username = document.getElementById('register-username').value.trim();
-    const email = document.getElementById('register-email').value.trim();
     const password = document.getElementById('register-password').value.trim();
   
-    if (username && email && password) {
+    if (username && password) {
       const response = await fetch('/api/user/register', {
         method: 'POST',
         body: JSON.stringify({ username, email, password }),
