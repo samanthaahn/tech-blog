@@ -1,5 +1,7 @@
-{{#each posts}} 
-<p>{{title}}</p>
-<p>{{content}}</p>
-<p> By: {{user.username}} on {{date}}</p>
+{{#each posts}}
+  <div class="post-box">
+    <p class="post-title">{{title}}</p>
+    <p class="post-content">{{content}}</p>
+    <p class="post-meta">By: {{user.username}} on {{date}}</p>
+  </div>
 {{/each}}

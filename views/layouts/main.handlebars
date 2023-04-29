@@ -9,28 +9,29 @@
 </head>
 
 <body>
-    <nav>
-<a href="/">Home</a>
-<a href="/dashboard">Dashboard</a>
-{{#if loggedIn}}
-<button id="logout" class="btn">Logout</button>
-{{else}}
-<a href="/login">Login</a>
-{{/if}}
-    </nav>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    {{#if loggedIn}}
+    <button id="logout" class="btn">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
+  </nav>
 
-<header>
-  <h1>Welcome to the go-to Tech Blog!</h1>
-</header>
+  <header>
+    <h1>Welcome to the go-to Tech Blog!</h1>
+  </header>
 
-<main>
-  <div class="container">
-    {{{body}}} 
-  </div>
-</main>
+  <main>
+    <div class="container">
+      {{{body}}}
+    </div>
+  </main>
 
-{{#if loggedIn}}
-<script src="/public/js/logout.js"></script>
-{{/if}}
+  {{#if loggedIn}}
+  <script src="/public/js/logout.js"></script>
+  {{/if}}
 </body>
+
 </html>

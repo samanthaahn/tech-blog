@@ -1,1 +1,7 @@
-<div>Dashboard</div>
+{{#each posts}}
+<div class="post">
+  <h2>{{title}}</h2>
+  <p>{{content}}</p>
+  <p>Posted on {{format_date date_created}} by {{user.username}}</p>
+</div>
+{{/each}}
