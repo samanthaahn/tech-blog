@@ -51,4 +51,19 @@ router.post("/", async (req, res) => {
   }
 });
 
+// This route is to edit a post
+router.post('/edit/:id', async (req, res, next) => {
+  try {
+    await Post.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    const updatedPost = await Post.findByPk(req.params.id);
+    res.redirect('/dashboard')
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
