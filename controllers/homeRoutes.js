@@ -29,10 +29,18 @@ router.get("/editpost", async (req, res) => {
 });
 
 router.get("/login", async (req, res) => {
+  if (req.session.loggedIn) {
+  res.redirect('/');
+  return;
+  }
   res.render("login");
 });
 
 router.get("/signup", async (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+    }
   res.render("signup");
 });
 
