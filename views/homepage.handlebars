@@ -1,7 +1,7 @@
 {{#each posts}}
   <div class="post-box">
-    <p class="post-title">{{title}}</p>
+    <a href ='/viewpost/{{id}}'><p class="post-title">{{title}}</p></a>
     <p class="post-content">{{content}}</p>
-    <p class="post-meta">By: {{user.username}} on {{date}}</p>
+    <p class="post-meta">By: {{user.username}} on {{format_time date}}</p>
   </div>
 {{/each}}

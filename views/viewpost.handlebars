@@ -1,5 +1,8 @@
-{{#each posts as |post|}}
+
 <section>
-    {{> post}}
+      <div class="post-box">
+    <p class="post-title">{{post.title}}</p>
+    <p class="post-content">{{post.content}}</p>
+    <p class="post-meta">By: {{post.user.username}} on {{format_time post.date}}</p>
+  </div>
 </section>
-{{/each}}

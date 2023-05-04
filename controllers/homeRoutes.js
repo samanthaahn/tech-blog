@@ -44,8 +44,23 @@ router.get("/signup", async (req, res) => {
   res.render("signup");
 });
 
-router.get("/viewpost", async (req, res) => {
-  res.render("viewpost");
+router.get("/viewpost/:id", async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id,
+    { include: [User, Comment] },
+  );
+  
+  if (!postData) {
+    res.status(404).json({ message: "No post found! Try again." });
+    return;
+  }
+  const post = postData.get({plain:true})
+
+  res.status(200).render("viewpost", {post});
+} catch (error) {
+  console.log(error);
+  res.status(500).json(error);
+}
 });
 
 module.exports = router; 
