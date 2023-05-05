@@ -4,9 +4,9 @@ document.getElementById('register-form').addEventListener('submit', async (e) =>
     const password = document.getElementById('register-password').value.trim();
   
     if (username && password) {
-      const response = await fetch('/api/user/register', {
+      const response = await fetch('/api/users/register', {
         method: 'POST',
-        body: JSON.stringify({ username, email, password }),
+        body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
@@ -24,7 +24,7 @@ document.getElementById('register-form').addEventListener('submit', async (e) =>
     const password = document.getElementById('login-password').value.trim();
   
     if (username && password) {
-      const response = await fetch('/api/user/login', {
+      const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },

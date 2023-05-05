@@ -16,18 +16,42 @@ router.get("/", async (req, res) => {
 });
 
 
-router.get("/createpost", async (req, res) => {
-  res.render("createpost");
-});
-
 router.get("/dashboard", async (req, res) => {
   res.render("dashboard");
+});
+
+router.get("/comment", async (req, res) => {
+  try {
+    await Comment.update(req.body, {
+        where: {
+            id: req.params.id,
+        },
+    })
+    const updatedComment = await Comment.findByPk(req.params.id);
+    const newComment = updatedComment.get({plain:true})
+    
+    res.status(200).render(newComment);
+} catch (error) {
+    console.error('Error with this comment:', error);
+    res.status(500).json({ message: 'Internal Server Error', error: error });
+}
+res.render("comment");
+});
+
+
+router.get("/createpost", async (req, res) => {
+  res.render("createpost");
 });
 
 router.get("/editpost", async (req, res) => {
   res.render("editpost");
 });
 
+router.get("/deletepost", async (req, res) => {
+  res.render("deletepost");
+});
+
+// This allows the user to login to the webpage
 router.get("/login", async (req, res) => {
   if (req.session.loggedIn) {
   res.redirect('/');
@@ -36,6 +60,7 @@ router.get("/login", async (req, res) => {
   res.render("login");
 });
 
+// This helps the user signup for an account 
 router.get("/signup", async (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -44,6 +69,7 @@ router.get("/signup", async (req, res) => {
   res.render("signup");
 });
 
+// This is to view a specific post
 router.get("/viewpost/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id,
@@ -56,7 +82,7 @@ router.get("/viewpost/:id", async (req, res) => {
   }
   const post = postData.get({plain:true})
 
-  res.status(200).render("viewpost", {post});
+  res.status(200).render("viewpost", {post, loggedIn: req.session.loggedIn});
 } catch (error) {
   console.log(error);
   res.status(500).json(error);

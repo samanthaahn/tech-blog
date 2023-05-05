@@ -3,8 +3,8 @@ const form = document.querySelector('#comment-form');
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
   
-  const contentEl = document.querySelector('#comment-content');
-  const postId = document.querySelector('#post-id').value;
+  // const contentEl = document.querySelector('#comment-content');
+  // const postId = document.querySelector('#post-id').value;
 
   const newComment = {
     comment: contentEl.value,
