@@ -39,10 +39,10 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const newPost = await Post.create({
-      ...req.body,
+      // ...req.body,
       title: req.body.title,
       content: req.body.content,
-      user_id: req.body.user_id,
+      user_id: req.session.userId,
     });
     res.status(201).json(newPost);
   } catch (error) {

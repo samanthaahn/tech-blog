@@ -4,7 +4,7 @@ const { Comment } = require('../../models');
 // This is to comment on a post
 router.post('/', async (req, res) => {
 try {
-    const {post_id, content, user_id} = req.body;
+    const {post_id, content} = req.body;
 
     const newComment = await Comment.create({
         post_id,

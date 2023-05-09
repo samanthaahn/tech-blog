@@ -8,33 +8,25 @@ router.get("/", async (req, res) => {
       include: [{ model: User }, { model: Comment }],
     });
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.render("homepage", { posts });
+    res.render("homepage", { posts, loggedIn: req.session.loggedIn  });
   } catch (error) {
     res.status(500).json(error);
   }
 });
 
 router.get("/dashboard", async (req, res) => {
-  res.render("dashboard");
-});
-
-router.get("/comment", async (req, res) => {
   try {
-    await Comment.update(req.body, {
-      where: {
-        id: req.params.id,
-      },
-    });
-    const updatedComment = await Comment.findByPk(req.params.id);
-    const newComment = updatedComment.get({ plain: true });
-
-    res.status(200).render(newComment);
+    const postData = await Post.findAll(
+      {where: {user_id: req.session.userId}},
+      {include: [{ model: User }, { model: Comment }]},
+    );
+    const posts = postData.map((post) => post.get({ plain: true }));
+    res.render("dashboard", { posts, loggedIn: req.session.loggedIn  });
   } catch (error) {
-    console.error("Error with this comment:", error);
-    res.status(500).json({ message: "Internal Server Error", error: error });
+    res.status(500).json(error);
   }
-  res.render("comment");
 });
+
 
 router.get("/createpost", async (req, res) => {
   try {
@@ -103,7 +95,7 @@ router.get("/signup", async (req, res) => {
 router.get("/viewpost/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-      include: [User, Comment],
+      include: [User, {model: Comment, include: [User]}],
     });
 
     if (!postData) {

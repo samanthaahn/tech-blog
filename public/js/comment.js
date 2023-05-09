@@ -3,15 +3,15 @@ const form = document.querySelector('#comment-form');
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
   
-  // const contentEl = document.querySelector('#comment-content');
-  // const postId = document.querySelector('#post-id').value;
+  const contentEl = document.querySelector('#comment-content').value;
+  const postId = document.querySelector('#comment-content').getAttribute('post');
 
   const newComment = {
-    comment: contentEl.value,
-    post_id: post,
+    content: contentEl,
+    post_id: postId,
   };
   
-  const response = await fetch(`/api/posts/${postId}/comments`, {
+  const response = await fetch(`/api/comments`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(newComment)

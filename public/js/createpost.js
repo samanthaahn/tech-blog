@@ -26,8 +26,4 @@ const postForm = document.querySelector('form');
     
     const createPostButton = document.querySelector('#create-new-post');
 
-createPostButton.addEventListener('click', () => {
-  window.location.replace('/createpost');
-});
-
     

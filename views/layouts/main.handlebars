@@ -11,8 +11,8 @@
 <body>
   <nav>
     <a href="/">Home</a>
-    <a href="/dashboard">Dashboard</a>
     {{#if loggedIn}}
+    <a href="/dashboard">Dashboard</a>
     <button id="logout" class="btn">Logout</button>
     {{else}}
     <a href="/login">Login</a>
