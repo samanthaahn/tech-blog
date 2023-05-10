@@ -245,3 +245,59 @@ nav {
   .hide {
     display: none;
   }
+
+  /* Styles for new post section */
+.new-post-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Styles for post list section */
+.post-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-box {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-title {
+  font-size: 24px;
+  margin: 0;
+}
+
+.post-body {
+  margin: 10px 0;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-link {
+  font-size: 18px;
+  text-decoration: none;
+  color: #666;
+}
+
+.edit-link:hover {
+  color: #333;
+}
+
+.hide {
+  display: none;
+}

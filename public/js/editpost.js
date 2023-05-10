@@ -17,11 +17,11 @@ unorderedList.addEventListener("click", async (event) => {
 
     const postId = event.target.getAttribute("postId");
 
-    const response = await fetch(`/api/posts/${postId}`, {
+    const response = await fetch(`/api/posts/edit/${postId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, content })
-    });
+    }).catch((error) => console.error('Error', error));
 
     if (response.ok) {
       document.location.reload(true);
