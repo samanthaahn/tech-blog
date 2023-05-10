@@ -7,7 +7,9 @@
         <li>
           <textarea disabled class="post-title">{{post.title}}</textarea>
           <textarea disabled class="post-content">{{post.content}}</textarea>
-          <a href="/dashboard/edit/{{post.id}}" class="editlink">edit post</a>
+          <button class="editlink">edit post</button>
+          <button postId="{{post.id}}" class="submitlink hide">submit post</button>
+          <button class="deletelink">delete post</button>
         </li>
       {{/each}}
     </ul>
@@ -23,5 +25,7 @@
 </form>
 
 <script src="/js/createpost.js"></script>
+<script src="/js/editpost.js"></script>
+<script src="/js/deletepost.js"></script>
 
 

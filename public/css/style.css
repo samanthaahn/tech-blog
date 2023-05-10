@@ -241,3 +241,7 @@ nav {
     font-weight: bold;
     margin-bottom: 10px;
   }
+
+  .hide {
+    display: none;
+  }

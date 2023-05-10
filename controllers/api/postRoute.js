@@ -46,8 +46,8 @@ router.post("/", async (req, res) => {
     });
     res.status(201).json(newPost);
   } catch (error) {
-    console.error("Error in POST /:", err);
-    res.status(400).json({ message: "Bad Request", error: err });
+    console.error("Error in POST /:", error);
+    res.status(400).json({ message: "Bad Request", error: error });
   }
 });
 

@@ -1,24 +1,32 @@
-form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    
-    const titleEl = document.querySelector('#title');
-    const contentEl = document.querySelector('#content');
-    const id = document.location.pathname.split('/').pop();
-    
-    const updatedPost = {
-      title: titleEl.value,
-      content: contentEl.value 
-    };
-    
-    const response = await fetch(`/api/post/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(updatedPost)
+const unorderedList = document.querySelector(".post-list");
+
+unorderedList.addEventListener("click", async (event) => {
+  if (event.target.getAttribute("class") === "editlink") {
+    event.target.previousElementSibling.previousElementSibling.removeAttribute(
+      "disabled"
+    );
+    event.target.previousElementSibling.removeAttribute("disabled");
+    event.target.nextElementSibling.classList.remove("hide");
+  }
+  if (event.target.getAttribute("class") === "submitlink") {
+    const title =
+      event.target.previousElementSibling.previousElementSibling
+        .previousElementSibling.value;
+    const content =
+      event.target.previousElementSibling.previousElementSibling.value;
+
+    const postId = event.target.getAttribute("postId");
+
+    const response = await fetch(`/api/posts/${postId}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title, content })
     });
-    
+
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.reload(true);
     } else {
-      alert('Could not update post, try again!');
+      alert("Failed to update post, try again!");
     }
-  });
+  }
+});
