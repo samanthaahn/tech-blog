@@ -19,13 +19,17 @@ N/A
 In order to use to be able to comment/edit/delete you'll need to create an account first. Once you're logged in, you can look at a users post, create your own, comment on posts, delete your comment. You can check your dashboard to see all the posts you've created. Interact and have fun! 
 
 ## Screenshot
-![alt text](./assets/images/Screenshot%202023-04-20%20at%203.35.07%20PM.png)
+![alt text](./public/images/Screenshot%202023-05-09%20at%208.59.48%20PM.png)
 
-![alt text](./assets/images/Screenshot%202023-04-20%20at%203.35.19%20PM.png)
+![alt text](./public/images/Screenshot%202023-05-09%20at%208.59.56%20PM.png)
 
-![alt text](./assets/images/Screenshot%202023-04-20%20at%203.35.30%20PM.png)
+![alt text](./public/images/Screenshot%202023-05-09%20at%209.00.05%20PM.png)
 
-![alt text](./assets/images/Screenshot%202023-04-20%20at%203.35.37%20PM.png)
+![alt text](./public/images/Screenshot%202023-05-09%20at%209.00.17%20PM.png)
+
+![alt text](./public/images/Screenshot%202023-05-09%20at%209.00.24%20PM.png)
+
+![alt text](./public/images/Screenshot%202023-05-09%20at%209.00.36%20PM.png)
 
 
 ## Contributing
