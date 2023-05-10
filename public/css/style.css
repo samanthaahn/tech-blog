@@ -222,18 +222,6 @@ nav {
     border-radius: 5px;
   }
   
-  .post-list li .editlink {
-    margin-top: 10px;
-    text-decoration: none;
-    color: #4caf50;
-    font-size: 16px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .post-list li .editlink:hover {
-    color: #3e8e41;
-  }
   
   .post-list li p {
     margin: 0;
@@ -250,4 +238,71 @@ nav {
     display: none;
   }
 
+  section {
+  background-color: #f6f6f6;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-list li {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.post-title {
+  border: none;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.post-content {
+  border: none;
+  display: block;
+  font-size: 16px;
+  height: 100px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.editlink,
+.submitlink,
+.deletelink {
+  background-color: #4CAF50;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.editlink {
+  margin-right: 10px;
+}
+
+.submitlink {
+  margin-right: 10px;
+}
+
+.deletelink {
+  margin-right: 10px;
+}
+
+.submitlink.hide {
+  display: none;
+}
   

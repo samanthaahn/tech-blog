@@ -29,4 +29,19 @@ unorderedList.addEventListener("click", async (event) => {
       alert("Failed to update post, try again!");
     }
   }
-});
+  const deleteBtn = document.querySelector('.deletelink');
+
+  deleteBtn.addEventListener('click', async (event) => {
+    event.preventDefault();
+    const postId = deleteBtn.getAttribute('postId');
+    const response = await fetch(`/api/posts/delete/${postId}`, {
+      method: 'DELETE'
+    });
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert('Could not delete post. Try again!');
+    }
+  });
+  }
+);
