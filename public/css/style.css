@@ -246,58 +246,121 @@ nav {
     display: none;
   }
 
-  /* Styles for new post section */
-.new-post-section {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-/* Styles for post list section */
-.post-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.post-box {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  padding: 10px;
-}
-
-.post-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.post-title {
-  font-size: 24px;
-  margin: 0;
-}
-
-.post-body {
-  margin: 10px 0;
-}
-
-.post-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.edit-link {
-  font-size: 18px;
-  text-decoration: none;
-  color: #666;
-}
-
-.edit-link:hover {
-  color: #333;
-}
-
-.hide {
-  display: none;
-}
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .post-list li {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .post-title,
+  .post-content {
+    border: none;
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 0;
+    resize: none;
+    width: 100%;
+  }
+  
+  .post-content {
+    font-size: 18px;
+    font-weight: normal;
+  }
+  
+  .editlink,
+  .submitlink,
+  .deletelink {
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    padding: 10px 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .submitlink {
+    background-color: #3c3;
+  }
+  
+  .submitlink.hide {
+    display: none;
+  }
+  
+  .deletelink {
+    background-color: #c33;
+  }
+  
+  .editlink:hover,
+  .submitlink:hover,
+  .deletelink:hover {
+    background-color: #444;
+  }
+  
+  .editlink:focus,
+  .submitlink:focus,
+  .deletelink:focus {
+    outline: none;
+  }
+  
+  .new-post-section {
+    text-align: center;
+  }
+  
+  #makePost {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  #makePost label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  #makePost input,
+  #makePost textarea {
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding: 10px;
+    resize: none;
+    width: 100%;
+  }
+  
+  #makePost button {
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px
+  }
