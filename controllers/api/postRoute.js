@@ -52,7 +52,7 @@ router.post("/", async (req, res) => {
 });
 
 // This route is to edit a post
-router.post('/edit/:id', async (req, res, next) => {
+router.put('/edit/:id', async (req, res, next) => {
   try {
     await Post.update(req.body, {
       where: {
@@ -60,14 +60,14 @@ router.post('/edit/:id', async (req, res, next) => {
       },
     });
     const updatedPost = await Post.findByPk(req.params.id);
-    res.redirect('/dashboard')
+    res.json(updatedPost);
   } catch (error) {
     next(error);
   }
 });
 
 // This route is used to delete a post
-router.delete('/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
   try {
     const postData = await Post.destroy({
       where: {

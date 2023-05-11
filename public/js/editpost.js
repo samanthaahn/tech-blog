@@ -20,8 +20,8 @@ unorderedList.addEventListener("click", async (event) => {
     const response = await fetch(`/api/posts/edit/${postId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title, content })
-    }).catch((error) => console.error('Error', error));
+      body: JSON.stringify({ title, content }),
+    }).catch((error) => console.error("Error", error));
 
     if (response.ok) {
       document.location.reload(true);
@@ -29,19 +29,15 @@ unorderedList.addEventListener("click", async (event) => {
       alert("Failed to update post, try again!");
     }
   }
-  const deleteBtn = document.querySelector('.deletelink');
-
-  deleteBtn.addEventListener('click', async (event) => {
-    event.preventDefault();
-    const postId = deleteBtn.getAttribute('postId');
+  if (event.target.getAttribute("class") === "deletelink") {
+    const postId = event.target.previousElementSibling.getAttribute("postId");
     const response = await fetch(`/api/posts/delete/${postId}`, {
-      method: 'DELETE'
+      method: "DELETE",
     });
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace("/dashboard");
     } else {
-      alert('Could not delete post. Try again!');
+      alert("Could not delete post. Try again!");
     }
-  });
   }
-);
+});
